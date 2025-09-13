@@ -1,0 +1,157 @@
+[
+    {
+        "name": "ddyueshu",
+        "show_name": "顶点小说",
+        "url": "https://www.ddyueshu.cc",
+        "domains": [
+            "www.ddyueshu.cc",
+            "ddyueshu.cc"
+        ],
+        "chapter_list": {
+            "items": [
+                "#list dl dt:nth-of-type(2) ~ dd a"
+            ]
+        },
+        "book": {
+            "author": [
+                "#info p:nth-of-type(1)"
+            ]
+        },
+        "content": {
+            "selector": "#content",
+            "remove_patterns": [
+                ".*请记住本书首发域名.*",
+                ".*本书为VIP专享,请付费阅读.*"
+            ]
+        }
+    },
+    {
+        "name": "mddyueshu",
+        "show_name": "顶点小说移动",
+        "url": "https://m.ddyueshu.cc",
+        "domains": [
+            "m.ddyueshu.cc"
+        ],
+        "chapter_list": {
+            "count_per_page": 20,
+            "next": ".listpage .right a",
+            "items": [
+                ".books > div:nth-last-child(2) dd a"
+            ],
+            "page_url": {
+                "skip_endding": ".html",
+                "fmt": "{book_url}-{page}.html"
+            }
+        },
+        "book": {
+            "title": [
+                ".book_info .book_box dl dt.name"
+            ],
+            "author": [
+                ".book_info .book_box dl dd span"
+            ],
+            "description": [
+                ".book_about dl dd"
+            ],
+            "cover_img": [
+                ".book_info .cover img"
+            ]
+        },
+        "content": {
+            "selector": "#chaptercontent",
+            "next": "#pb_next",
+            "remove_patterns": [
+                ".*?记住手机版网址.*",
+                ".*?mchaptererror.*?"
+            ]
+        }
+    },
+    {
+        "name": "biquuge",
+        "show_name": "笔趣阁",
+        "url": "https://www.biquuge.com/",
+        "domains": [
+            "biquuge.com",
+            "www.biquuge.com",
+            "biquuge.net",
+            "biquuge.org",
+            "biquuge5200.com",
+            "biquuge.com",
+            "biquuge.tw",
+            "biquuge.la",
+            "biquuge.info"
+        ],
+        "search": {
+            "url": "https://www.biquuge.com/search.php?q={keyword}",
+            "items": [
+                ".container div div dl"
+            ],
+            "next": "",
+            "title": [
+                "dd h3 a"
+            ],
+            "author": [
+                "dd.book_other span"
+            ],
+            "description": [],
+            "cover_img": [
+                "dt a img"
+            ]
+        },
+        "chapter_list": {
+            "count_per_page": 100,
+            "list": [
+                ".book_list.book_list2 ul"
+            ],
+            "items": [],
+            "next": "",
+            "pagers": {
+                "items": ".pages ul li a.page-link",
+                "current": ".pages ul li.active a.page-link"
+            },
+            "page_url": {
+                "skip_endding": "/",
+                "fmt": "{book_url}/index_{page}.html"
+            }
+        },
+        "book": {
+            "title": [
+                "#info h1",
+                ".info h1",
+                ".book-title",
+                "#maininfo h1",
+                ".con_top h1"
+            ],
+            "author": [
+                "#info p:first-of-type",
+                ".info p:first-of-type",
+                ".info .options ul li:first-of-type"
+            ],
+            "description": [
+                "#intro",
+                ".intro",
+                "#maininfo .intro",
+                ".book-intro",
+                ".summary"
+            ],
+            "cover_img": [
+                ".img-thumbnail"
+            ]
+        },
+        "content": {
+            "selector": "article",
+            "remove_tags": [
+                "title"
+            ],
+            "remove_patterns": [
+                ".*第\\d+章.*",
+                ".*第\\(\\d+/\\d+\\)页.*",
+                ".*?章节错误,点此举报.*?",
+                ".*?记住手机版网址.*",
+                ".*?mchaptererror.*?",
+                ".*本书首发来自.*看正版.*"
+            ],
+            "next": "#next"
+        }
+    }
+]
