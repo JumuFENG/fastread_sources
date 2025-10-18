@@ -153,5 +153,43 @@
             ],
             "next": "#next"
         }
+    },
+    {
+        "name": "luoxia",
+        "show_name": "落霞小说",
+        "url": "https://www.luoxia123.com/",
+        "domains": [
+            "luoxia123.com",
+            "www.luoxia123.com"
+        ],
+        "chapter_list": {
+            "list": [
+                "#booklist"
+            ],
+            "next": ""
+        },
+        "book": {
+            "title": [
+                ".panel-heading h1"
+            ],
+            "author": [
+                ".panel-heading h1 small"
+            ],
+            "description": [
+                ".panel-body p.m-summary"
+            ],
+            "cover_img": [
+                ".panel-body div.pic img"
+            ]
+        },
+        "content": {
+            "selector": "#content",
+            "next": ".m-page a:-soup-contains(\"下一章\")",
+            "remove_patterns": [
+                ".*第.+章.*",
+                ".*登录.*帐号.*",
+                ".*请书友们支持.*"
+            ]
+        }
     }
 ]
