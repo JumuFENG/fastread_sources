@@ -5,7 +5,8 @@
 
 from typing import List, Optional
 from bs4 import BeautifulSoup
-from parsers.base_parser import BaseBookSourceParser, ChapterInfo
+from app.parsers.base_parser import BaseBookSourceParser, ChapterInfo
+from app.lofig import logger
 
 
 class JjwxcParser(BaseBookSourceParser):
@@ -56,7 +57,7 @@ class JjwxcParser(BaseBookSourceParser):
                     chapter_number += 1
 
             except Exception as e:
-                print(f"解析章节链接失败: {e}")
+                logger.error(f"解析章节链接失败: {e}")
                 continue
 
         return chapters

@@ -1,4 +1,4 @@
-from parsers.base_parser import BaseBookSourceParser
+from app.parsers.base_parser import BaseBookSourceParser
 
 
 class QidiyParser(BaseBookSourceParser):

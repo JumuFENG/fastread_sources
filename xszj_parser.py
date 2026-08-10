@@ -5,7 +5,7 @@ xszj.org书源解析器
 from typing import List, Optional
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
-from parsers.base_parser import BaseBookSourceParser, SearchResult, BookInfo, ChapterInfo
+from app.parsers.base_parser import BaseBookSourceParser, SearchResult, BookInfo, ChapterInfo
 import re
 
 

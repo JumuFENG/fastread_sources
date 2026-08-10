@@ -1,4 +1,4 @@
-from parsers.base_parser import BaseBookSourceParser
+from app.parsers.base_parser import BaseBookSourceParser
 import re
 
 
@@ -8,7 +8,7 @@ class DybzParser(BaseBookSourceParser):
         "name": "diyibanzhu",
         "show_name": "第一版主网",
         "url": "https://m.diyibanzhu5.online/",
-        "domains": ["m.diyibanzhu5.online","m.diyibanzhu.me"],
+        "domains": ["m.diyibanzhu5.online","m.diyibanzhu.me",""],
         "search": {
             "url": "{keyword}",
             "items": [],

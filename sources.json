@@ -191,5 +191,73 @@
                 ".*请书友们支持.*"
             ]
         }
+    },
+    {
+        "name": "jszj",
+        "show_name": "简书之家",
+        "url": "http://www.jinshuzhijia.com/",
+        "domains": [
+            "www.jinshuzhijia.com",
+            "jinshuzhijia.com"
+        ],
+        "search": {
+            "url": "http://www.jinshuzhijia.com/index.php/book/search?key={keyword}",
+            "next": ".page-box .page-num:-soup-contains(\">\")",
+            "items": [
+                "ul.tjshu li"
+            ],
+            "title": [
+                ".info .name.hang1"
+            ],
+            "author": [
+                ".info .inf2 span:first-of-type"
+            ],
+            "description": [
+                ".info .decs.hangd"
+            ],
+            "cover_img": [
+                ".photo img"
+            ]
+        },
+        "chapter_list": {
+            "count_per_page": 0,
+            "list": [
+                "#chapterlsit"
+            ]
+        },
+        "book": {
+            "title": [
+                "#bookinfo .name h1"
+            ],
+            "author": [
+                "#bookinfo div.at"
+            ],
+            "description": [
+                "#bookinfo div.decs"
+            ],
+            "cover_img": [
+                "div.tj-shu.bgw.tjbox img"
+            ]
+        },
+        "content": {
+            "selector": ".tjc-cot",
+            "remove_tags": [
+                "a",
+                "span"
+            ]
+        }
+    },
+    {
+        "name": "xbiquge77",
+        "show_name": "笔趣阁77",
+        "url": "https://www.xbiquge77.com/",
+        "domains": [
+            "www.xbiquge77.com",
+            "xbiquge77.com"
+        ],
+        "chapter_list": {
+            "count_per_page": 0,
+            "items": ["div.listmain dd a"]
+        }
     }
 ]

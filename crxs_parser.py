@@ -4,7 +4,8 @@ crxs.me书源解析器
 
 from typing import List, Optional
 from bs4 import BeautifulSoup
-from parsers.base_parser import BaseBookSourceParser, SearchResult, BookInfo, ChapterInfo
+from app.parsers.base_parser import BaseBookSourceParser, SearchResult, BookInfo, ChapterInfo
+from app.lofig import logger
 
 
 class CrxsParser(BaseBookSourceParser):
@@ -58,7 +59,7 @@ class CrxsParser(BaseBookSourceParser):
             return bookinfo
 
         except Exception as e:
-            print(f"解析起点书籍信息失败: {e}")
+            logger.error(f"解析起点书籍信息失败: {e}")
             return None
 
     async def parse_chapter_list(self, soup: BeautifulSoup, book_url: str, chno:int=0) -> List[ChapterInfo]:
